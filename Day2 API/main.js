@@ -11,12 +11,31 @@ app.get("", function(req, res){
     res.send("hello")
 });
 
-app.get("/books", function(re,res){
-res.send({
-    "Atomic habit": "self-help",
-    "zero to one": "startup",
-    "hooked": "habit formation",
-    "Everything store": "amazon story"
+app.get("/books", function(req,res){
+   return res.status(200).json({
+       result: [
+       {
+           "name": "Zero to one",
+           "author": "Peter theil",
+       },
+       {
+           "name": "Magic of thinking Big",
+           "author": "Mohak Tripathi",
+       },
+       {
+           "name": "Hooked",
+           "author": "Nir Eyal",
+       },
+       {
+           "name": "Tap Dance",
+           "author": "Warren Buffet",
+       },
+
+   ],
+})
 
 })
-});
+
+
+
+
