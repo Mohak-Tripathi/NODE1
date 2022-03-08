@@ -1,0 +1,11 @@
+ use assignment
+ db.createCollection("users")
+  db.users.insert({"first_name":"Mohak"})
+  db.users.insert({"first_name": "pajjan", "last_name": "tripathi", "email": "rajjantripathi029@gmail.com", "gender": "Male", "ip_adress": 123, "age": 25})
+  db.users.find({}).pretty()
+
+  db.users.findOne({"first_name":"rajjan"})
+
+db.users.update({"_id":ObjectId("62277caec613b0daf1a366fb")},{$set : {"city":"Kanpur"}})
+ db.users.updateMany({"first_name":"rajjan"},{$set : {"city":"Kanpur"}})
+  db.users.remove({"first_name":"rajjan"})
