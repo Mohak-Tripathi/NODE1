@@ -13,9 +13,9 @@ app.use("/users", userController);
 
 app.use("/todos", todosController);
 
-app.use("/register", register);
+app.post("/register", register);
 
-app.use("/login", login)
+app.post("/login", login)
 
 
 
