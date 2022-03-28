@@ -1,11 +1,11 @@
 {
-  "name": "authenticate2",
+  "name": "unit-4-finalexam",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon src/service"
+    "server": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +15,6 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.8",
-    "passport": "^0.5.2",
-    "passport-google-oauth20": "^2.0.0"
+    "mongoose": "^6.2.8"
   }
 }
