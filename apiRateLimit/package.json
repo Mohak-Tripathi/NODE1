@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "config": "^3.3.7",
+    "express": "^4.18.1",
+    "express-rate-limit": "^6.4.0",
+    "mongoose": "^6.3.4",
+    "nodemon": "^2.0.16"
+  },
+  "scripts": {
+    "server": "nodemon src/server"
+  },
+  "name": "apiratelimit",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keshavGaur053/apiRateLimit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keshavGaur053/apiRateLimit/issues"
+  },
+  "homepage": "https://github.com/keshavGaur053/apiRateLimit#readme",
+  "devDependencies": {}
+}
