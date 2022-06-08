@@ -38,6 +38,11 @@ const sectionSchema=new mongoose.Schema({
 const Section=mongoose.model("section",sectionSchema);
 
 
+
+
+
+
+
 const bookSchema=new mongoose.Schema({
     name:{type:String,required:true},
     sectionId:{type:mongoose.Schema.Types.ObjectId,
@@ -85,7 +90,7 @@ const book_authorSchema=new mongoose.Schema({
 const BookAuthor=mongoose.model("book-author",book_authorSchema);
 
 
-
+//CRUD user
 
 
 app.get("/users",async(req,res)=>{
@@ -183,6 +188,16 @@ app.patch("/books/:id",async(req,res)=>{
         console.log(error)
     }
 });
+
+
+
+
+
+
+
+//author crud- 
+
+
 app.get("/author",async(req,res)=>{
     try {
         const author=await Author.find().populate({path:"userid",select:{first_name:1,last_name:1}}).lean().exec()
@@ -207,6 +222,13 @@ app.delete("/author/:id",async(req,res)=>{
         console.log(error)
     }
 });
+
+
+
+
+
+
+
 
 
 app.get("/book_author",async(req,res)=>{
