@@ -6,6 +6,8 @@ const User = require("../models/user.models");
 
 const router = express.Router();
 
+// see Dhaval Sir video around 1:47: 00 min to 1:50 : 00 regarding strong password validation and confirm password validation
+
 router.post(
   "",
 
@@ -17,16 +19,18 @@ router.post(
     .not()
     .isEmpty()
     .withMessage("Last Name should not be empty!!"),
-  body("email").isEmail().withMessage("Please enter valid email address").custom(async()=>{
-      const user= await User.findOne({email:value})
+  body("email")
+    .isEmail()
+    .withMessage("Please enter valid email address")
+    .custom(async () => {
+      const user = await User.findOne({ email: value });
 
-      if(user){
-          throw new Error ("Email is already taken")
+      if (user) {
+        throw new Error("Email is already taken");
+      } else {
+        return true;
       }
-      else{
-          return true
-      }
-  }),
+    }),
   body("pincode")
     .not()
     .isEmpty()
@@ -37,11 +41,13 @@ router.post(
     .not()
     .isEmpty()
     .withMessage("age should not be empty")
+    .isNumeric()
+    .withMessage("Age must be number")
     .isInt({ min: 1, max: 100 })
     .withMessage("Age should between 1 to 100"),
   body("gender").custom((value) => {
     if (value == "Male" || value == "Female" || value == "Others") {
-      return true;  // return true is very important while writing custom validators
+      return true; // return true is very important while writing custom validators
     }
     throw new Error("Please enter the valid gender");
   }),
