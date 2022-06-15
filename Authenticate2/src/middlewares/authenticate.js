@@ -1,4 +1,5 @@
 // const {promise} = require("bcrypt");
+
 const jwt = require("jsonwebtoken");
 
 require("dotenv").config();
@@ -6,6 +7,7 @@ require("dotenv").config();
 const verifyToken = async (token) => {
 	return new Promise((resolve, reject) => {
 		var vt = jwt.verify(token, "masaisecretkey", (err, decoded) => {
+			// var vt = jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
 			if (err) return reject(err);
 
 			return resolve(decoded);

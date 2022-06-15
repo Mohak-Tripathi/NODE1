@@ -25,6 +25,6 @@ app.use("/users", userControllers);
 app.post("/register", register);
 app.post("/login", login);
 
-app.use("/posts", postControllers);
+app.use("/posts", postControllers); // for Authenticate => Note app.use and not app.post
 
 module.exports = app;
